@@ -31,7 +31,7 @@ jobs:
           python train_model.py
 
       - name: Upload model artifact (pinned SHA)
-        uses: actions/upload-artifact@9a66be8f5cf8f2aa38b4aab84b6e9fdf4d150a1c  # v3.1.2
+        uses: actions/upload-artifact@v4
         with:
           name: trained-model
           path: model/
