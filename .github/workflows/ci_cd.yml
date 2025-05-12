@@ -1,0 +1,36 @@
+name: Regression CI/CD
+
+on:
+  push:
+    paths:
+      - 'data/train_new.csv'
+      - 'train_model.py'
+      - '.github/workflows/**'
+
+jobs:
+  retrain-and-evaluate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run training
+        run: |
+          mkdir -p model
+          python train_model.py
+
+      - name: Save model artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: trained-model
+          path: model/
