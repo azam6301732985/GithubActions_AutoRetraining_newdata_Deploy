@@ -14,6 +14,7 @@ python app.py
 
 note: screenshots has been added in the folder of venv_results
 
+## 🔧 Setup (Poetry Environment)
 
 ### 🔹 Poetry Setup (alternative)
 ```markdown
