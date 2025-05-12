@@ -13,3 +13,12 @@ python train_model.py
 python app.py
 
 note: screenshots has been added in the folder of venv_results
+
+
+### 🔹 Poetry Setup (alternative)
+```markdown
+## ⚙️ Setup (Using Poetry)
+```bash
+poetry init --no-interation
+poetry add pandas scikit-learn flask numpy
+python app.py
